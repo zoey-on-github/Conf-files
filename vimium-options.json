@@ -1,0 +1,250 @@
+{
+  "settingsVersion": "1.67",
+  "exclusionRules": [
+    {
+      "pattern": "https?://mail.google.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.youtube.com/*",
+      "passKeys": "jkl ,. t ? 1 2 3 4 5 6 7 8 9 o > < /"
+    },
+    {
+      "pattern": "https?://monkeytype.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "chrome://newtab/*",
+      "passKeys": "dfjk"
+    },
+    {
+      "pattern": "https?://www.google.com/*",
+      "passKeys": "/ 1 2 3 4 5 6 7 8 9"
+    },
+    {
+      "pattern": "https?://krunker.io/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://ckrisirkc.github.io/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://bobydob.github.io/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://sites.google.com/*",
+      "passKeys": "dfjk"
+    },
+    {
+      "pattern": "https?://hyperwood.github.io/*",
+      "passKeys": "dfjk"
+    },
+    {
+      "pattern": "about:blank*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://jstris.jezevec10.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://chvin.github.io/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://drive.google.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.apkonline.net/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.mathway.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://play.typeracer.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.nitrotype.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://lms.lausd.net/*",
+      "passKeys": "xT pW"
+    },
+    {
+      "pattern": "https?://en.wikipedia.org/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.khanacademy.org/*",
+      "passKeys": "r"
+    },
+    {
+      "pattern": "https?://www.lexaloffle.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://midi.city/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://mstdn.social/*",
+      "passKeys": "?"
+    },
+    {
+      "pattern": "https?://taiko.bui.pm/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://osugame.online/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://mastodon.lol/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.windows93.net/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://witches.live/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://copy.sh/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://unblocked-games.s3.amazonaws.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://keycode.info/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://malandrin.github.io/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://teddit.net/*",
+      "passKeys": "z"
+    },
+    {
+      "pattern": "https?://gbatemp.net/*",
+      "passKeys": "r b 1 2 3 4 5 6 7 8 9 10 m"
+    },
+    {
+      "pattern": "https?://www.audiotool.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.patatap.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://tibersynth.cc/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://docs.google.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://web.kamihq.com/*",
+      "passKeys": "1 2 3 4 5 6 7 8 9 ? p"
+    },
+    {
+      "pattern": "https?://www.pulsus.cc/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://github.com/*",
+      "passKeys": "/ ? t gi"
+    },
+    {
+      "pattern": "https?://tetr.io/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://humanbenchmark.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://unblocked1889.github.io/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://datafun.org/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://github.dev/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.lewdlegame.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.keybr.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.autodraw.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://dev.monkeytype.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://rhysd.github.io/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://readonlymemories.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.nytimes.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.gimkit.com/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://vscode.dev/*",
+      "passKeys": ""
+    },
+    {
+      "pattern": "https?://www.fnfgo.com/*",
+      "passKeys": ""
+    }
+  ],
+  "filterLinkHints": false,
+  "waitForEnterForFilteredHints": true,
+  "hideHud": false,
+  "keyMappings": "# Insert your preferred key mappings here.\nunmap x\nunmap T\nunmap r\nunmap b\nunmap 1\nunmap 2\nunmap 3 \nunmap 4 \nunmap 5\nunmap 6\nunmap 7\nunmap 8\nunmap 9\nunmap o\nmap < moveTabLeft\nmap > moveTabRight\nunmap t\nunmap p",
+  "linkHintCharacters": "sadfjklewcmpgh",
+  "linkHintNumbers": "0123456789",
+  "newTabUrl": "about:newtab",
+  "nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
+  "previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
+  "regexFindMode": false,
+  "ignoreKeyboardLayout": false,
+  "scrollStepSize": 38,
+  "smoothScroll": true,
+  "grabBackFocus": false,
+  "searchEngines": "w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\n\n# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\n# g: https://www.google.com/search?q=%s Google\n# l: https://www.google.com/search?q=%s&btnI I'm feeling lucky...\n# y: https://www.youtube.com/results?search_query=%s Youtube\n# gm: https://www.google.com/maps?q=%s Google maps\n# b: https://www.bing.com/search?q=%s Bing\n# d: https://duckduckgo.com/?q=%s DuckDuckGo\n# az: https://www.amazon.com/s/?field-keywords=%s Amazon\n# qw: https://www.qwant.com/?q=%s Qwant",
+  "searchUrl": "https://www.google.com/search?q=",
+  "userDefinedLinkHintCss": "div > .vimiumHintMarker {\n/* linkhint boxes */\nbackground: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFF785),\n  color-stop(100%,#FFC542));\nborder: 1px solid #E3BE23;\n}\n\ndiv > .vimiumHintMarker span {\n/* linkhint text */\ncolor: black;\nfont-weight: bold;\nfont-size: 12px;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\n}"
+}
