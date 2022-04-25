@@ -1,0 +1,198 @@
+{
+	"name": "discord-tools",
+	"displayName": "Discord Tools",
+	"description": "Discord chat, bot template, snippets, theme and more!",
+	"icon": "images/logo.png",
+	"version": "1.4.2",
+	"publisher": "Darkempire78",
+	"license": "GPL-3.0 License",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Darkempire78/Discord-Tools"
+	},
+	"bugs": {
+		"url": "https://github.com/Darkempire78/Discord-Tools/issues"
+	},
+	"engines": {
+		"vscode": "^1.52.0"
+	},
+	"keywords": [
+		"discord",
+		"discord bot",
+		"discord.py",
+		"discord.js",
+		"jda",
+		"eris",
+		"harmony",
+		"deno",
+		"discord theme",
+		"dark theme"
+	],
+	"categories": [
+		"Other",
+		"Snippets",
+		"Themes"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "discord-tools.pyBotTemplate",
+				"title": "Generate a python template bot (Discord.py)",
+				"category": "Discord Template"
+			},
+			{
+				"command": "discord-tools.jsBotTemplate",
+				"title": "Generate a javascript template bot (Discord.js)",
+				"category": "Discord Template"
+			},
+			{
+				"command": "discord-tools.openDiscordDoc",
+				"title": "Open the Discord bot Documention",
+				"category": "Discord Doc"
+			},
+			{
+				"command": "discord-tools.setUpDiscordToken",
+				"title": "Set up your personal Discord token",
+				"category": "Discord Chat"
+			},
+			{
+				"command": "discord-tools.reloadBot",
+				"title": "Reload the Discord Bot",
+				"category": "Discord Chat"
+			},
+			{
+				"command": "discord-tools.openDiscordChat",
+				"title": "Open the Discord Chat (must be started before)",
+				"category": "Discord Chat"
+			},
+			{
+				"command": "discord-tools.grabDiscordToken",
+				"title": "Grab your personal Discord Token",
+				"category": "Discord Chat"
+			},
+			{
+				"command": "discord-tools.setUpIfDiscordChaStartWhenVSCodeOpened",
+				"title": "Set up if the Discord chat should start when VSCode is opened",
+				"category": "Discord Chat"
+			},
+			{
+				"command": "discord-tools.startDiscordChat",
+				"title": "Start the Discord chat",
+				"category": "Discord Chat"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "discord-tools.openDiscordDoc",
+				"key": "ctrl+alt+d",
+				"mac": "shift+cmd+d"
+			}
+		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "discord-tools.pyBotTemplate",
+					"when": "workspaceFolderCount > 0"
+				},
+				{
+					"command": "discord-tools.jsBotTemplate",
+					"when": "workspaceFolderCount > 0"
+				},
+				{
+					"command": "discord-tools.openDiscordDoc",
+					"when": "workspaceFolderCount > 0"
+				}
+			]
+		},
+		"snippets": [
+			{
+				"language": "python",
+				"path": "./snippets/pySnippets.code-snippets"
+			},
+			{
+				"language": "javascript",
+				"path": "./snippets/jsSnippets.code-snippets"
+			},
+			{
+				"language": "javascript",
+				"path": "./snippets/erisSnippets.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/harmonySnippets.code-snippets"
+			},
+			{
+				"language": "java",
+				"path": "./snippets/javaSnippets.code-snippets"
+			}
+		],
+		"themes": [
+			{
+				"label": "Discord Theme (Dark)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/discordTheme-color-theme.json"
+			}
+		],
+		"views": {
+			"explorer": [
+				{
+					"id": "discordTreeView",
+					"name": "Discord"
+				}
+			]
+		},
+		"configuration": {
+			"type": "object",
+			"title": "Discord Tools",
+			"properties": {
+				"discord-chat.token": {
+					"type": "string",
+					"markdownDescription": "Your personal Discord token (Use this command to find it: `Discord Chat: Grab your personal Discord Token` or [see this YouTube tutorial](https://www.youtube.com/watch?v=YEgFvgg7ZPI))",
+					"default": ""
+				},
+				"discord-chat.setUpIfDiscordChaStartWhenVSCodeOpened": {
+					"type": "boolean",
+					"markdownDescription": "Start the Discord chat when VSCode is opened",
+					"default": true
+				}
+			}
+		}
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"@types/vscode": "^1.52.0",
+		"esbuild": "^0.12.1",
+		"eslint": "^7.15.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.1.3",
+		"typescript": "^4.1.2",
+		"vscode-test": "^1.4.1"
+	},
+	"galleryBanner": {
+		"color": "#6477C1",
+		"theme": "dark"
+	},
+	"dependencies": {
+		"discord.js-selfbot": "^12.0.2",
+		"fs-extra": "^9.0.1",
+		"markdown-it": "^12.0.6"
+	},
+	"__metadata": {
+		"id": "b7ae608d-676a-47df-b0fe-59602c6b2ab4",
+		"publisherId": "9fd2cbe3-fdd9-421d-8bf8-d10454096380",
+		"publisherDisplayName": null,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1642311720125
+	}
+}

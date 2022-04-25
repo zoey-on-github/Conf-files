@@ -1,0 +1,87 @@
+{
+	"name": "javascript-snippets",
+	"displayName": "Humane JS Snippets",
+	"publisher": "robole",
+	"author": {
+		"name": "Rob O'Leary"
+	},
+	"description": "Descriptive, easy to find JavaScript snippets, without nonsense abbreviations.",
+	"icon": "img/logo.png",
+	"version": "0.7.1",
+	"engines": {
+		"vscode": ">=1.0.0"
+	},
+	"bugs": {
+		"url": "https://github.com/robole/vscode-javascript-snippets/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/robole/vscode-javascript-snippets"
+	},
+	"license": "MIT",
+	"categories": [
+		"Snippets"
+	],
+	"galleryBanner": {
+		"color": "#00ff00",
+		"theme": "light"
+	},
+	"keywords": [
+		"javascript",
+		"vue",
+		"svelte",
+		"typescript",
+		"react",
+		"snippets",
+		"javascript snippets",
+		"js snippets",
+		"es6",
+		"ES6 snippets",
+		"ecmascript snippets",
+		"svelte snippets",
+		"vue snippets",
+		"typescript snippets",
+		"react snippets"
+	],
+	"contributes": {
+		"snippets": [
+			{
+				"language": "javascript",
+				"path": "./snippets/snippets.code-snippets"
+			},
+			{
+				"language": "typescript",
+				"path": "./snippets/snippets.code-snippets"
+			},
+			{
+				"language": "javascriptreact",
+				"path": "./snippets/snippets.code-snippets"
+			},
+			{
+				"language": "typescriptreact",
+				"path": "./snippets/snippets.code-snippets"
+			},
+			{
+				"language": "vue",
+				"path": "./snippets/snippets.code-snippets"
+			},
+			{
+				"language": "svelte",
+				"path": "./snippets/snippets.code-snippets"
+			}
+		]
+	},
+	"scripts": {
+		"build": "vsce package ."
+	},
+	"devDependencies": {
+		"vsce": ">=1.78.0"
+	},
+	"__metadata": {
+		"id": "70529a1f-6034-4fa5-9d13-4ebdbf2f8d76",
+		"publisherId": "a2821f27-ac0b-4053-8f15-bda65c77eec6",
+		"publisherDisplayName": null,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1640324459523
+	}
+}
