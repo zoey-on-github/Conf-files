@@ -13,3 +13,4 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 PS1='[%n@%m %~$] '
+alias icd="cd ~ && cd \$(find * -type d | fzf)"
