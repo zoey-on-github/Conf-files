@@ -17,6 +17,8 @@ call plug#begin()
 	Plug 'vim-airline/vim-airline'
 	Plug 'preservim/nerdtree' 
 	Plug 'rust-lang/rust.vim'
+	Plug 'andweeb/presence.nvim'
+	Plug 'junegunn/fzf'
 call plug#end()
 autocmd vimenter * ++nested colorscheme gruvbox
 let g:airline#extensions#tabline#enabled = 1
@@ -27,4 +29,5 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 let g:airline_powerline_fonts = 1
 :set relativenumber
 syntax enable
-filetype plugin indent on 
+filetype plugin indent on
+let NERDTreeShowHidden=1
