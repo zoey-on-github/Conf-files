@@ -18,7 +18,11 @@ call plug#begin()
 	Plug 'preservim/nerdtree' 
 	Plug 'rust-lang/rust.vim'
 	Plug 'andweeb/presence.nvim'
-	Plug 'junegunn/fzf'
+	Plug 'junegunn/fzf'             
+	Plug 'junegunn/fzf.vim'          
+	Plug 'timonv/vim-cargo'
+	Plug 'pangloss/vim-javascript'
+	Plug 'luochen1990/rainbow'
 call plug#end()
 autocmd vimenter * ++nested colorscheme gruvbox
 let g:airline#extensions#tabline#enabled = 1
@@ -31,3 +35,5 @@ let g:airline_powerline_fonts = 1
 syntax enable
 filetype plugin indent on
 let NERDTreeShowHidden=1
+nnoremap <C-p> :FZF<CR>
+let g:rainbow_active = 1 
