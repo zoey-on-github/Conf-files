@@ -15,6 +15,8 @@ if (empty($TMUX))
 endif
 call plug#begin()
 	Plug 'vim-airline/vim-airline'
+	Plug 'morhetz/gruvbox'
+	Plug 'vim-airline/vim-airline-themes'
 	Plug 'preservim/nerdtree' 
 	Plug 'rust-lang/rust.vim'
 	Plug 'andweeb/presence.nvim'
@@ -26,14 +28,17 @@ call plug#begin()
 call plug#end()
 autocmd vimenter * ++nested colorscheme gruvbox
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='gruvbox'
 " Start NERDTree and leave the cursor in it.
 autocmd VimEnter * NERDTree
 nnoremap <leader>n :NERDTreeFocus<CR>
-:let mapleader = ","
+let mapleader = ","
 let g:airline_powerline_fonts = 1
 :set relativenumber
 syntax enable
 filetype plugin indent on
 let NERDTreeShowHidden=1
-nnoremap <C-p> :FZF<CR>
+nnoremap <C-k> :FZF<CR>
 let g:rainbow_active = 1 
+autocmd BufEnter * silent! lcd %:p:h
+autocmd VimEnter * source init.vim

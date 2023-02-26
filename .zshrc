@@ -1,4 +1,3 @@
-
 # The following lines were added by compinstall
 
 zstyle ':completion:*' matcher-list 'r:|[._- '\'']=** r:|=**' '' 'm:{[:lower:]}={[:upper:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
@@ -12,5 +11,15 @@ setopt autocd
 unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
-PS1='[%n@%m %~$] '
+autoload -U colors && colors
+autoload edit-command-line; zle -N edit-command-line
+PS1='[%n@%m %~]$ '
+bindkey -M vicmd v edit-command-line
+#aliases
 alias icd="cd ~ && cd \$(find * -type d | fzf)"
+alias rainbowfetch="neofetch| lolcat" 
+alias neovim="nvim"
+alias awconf="cd ~/.config/awesome" 
+alias doom="~/.config/emacs/bin/doom"
+SAVEHIST="9000"
+export PATH=$PATH:/home/julie/.spicetify
