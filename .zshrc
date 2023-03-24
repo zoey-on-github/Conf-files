@@ -1,3 +1,4 @@
+
 # The following lines were added by compinstall
 
 zstyle ':completion:*' matcher-list 'r:|[._- '\'']=** r:|=**' '' 'm:{[:lower:]}={[:upper:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
@@ -21,5 +22,9 @@ alias rainbowfetch="neofetch| lolcat"
 alias neovim="nvim"
 alias awconf="cd ~/.config/awesome" 
 alias doom="~/.config/emacs/bin/doom"
+alias lgit="lazygit"
+alias zc="nvim .zshrc"
+alias ls="ls -la --color"
+alias grep="grep --color"
 SAVEHIST="9000"
 export PATH=$PATH:/home/julie/.spicetify
