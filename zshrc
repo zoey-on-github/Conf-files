@@ -38,7 +38,10 @@ alias ls="ls -la --color"
 alias grep="grep --color"
 alias rm="rm -i"
 alias cat="bat"
+untar() { tar xvf $1 }
 cs() { cd $1 && ls }
+aur_download() { aur sync $1 && sudo pacman -S $1}
+ixupload(){ curl -F 'file=@-' 0x0.st }
 video2gif() { ffmpeg -i $1 -vf "fps=10,scale=320:-1:flags=lanczos" -c:v pam -f image2pipe - | convert -delay 5 - -loop 0 -layers optimize $2 }
 #alias damnit ='sudo !!'
 #alias startserver="cd ~/pengiun_mc/Da && ./start.sh"

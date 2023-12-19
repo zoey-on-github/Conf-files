@@ -15,25 +15,30 @@ if (empty($TMUX))
 endif
 call plug#begin()
 	Plug 'vim-airline/vim-airline'
-	Plug 'preservim/nerdtree' 
+	"Plug 'preservim/nerdtree' 
 	Plug 'rust-lang/rust.vim'
 	Plug 'andweeb/presence.nvim'
 	Plug 'junegunn/fzf'
 	Plug 'voldikss/vim-floaterm'
 	Plug 'tpope/vim-fugitive'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"	Plug 'github/copilot.vim'
+	Plug 'github/copilot.vim'
 	Plug 'easymotion/vim-easymotion'
 	Plug 'luochen1990/rainbow'
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.3' }
 	Plug 'yuezk/vim-js'
 	Plug 'maxmellon/vim-jsx-pretty'	
+	Plug 'aymericbeaumet/vim-symlink'
+	Plug 'moll/vim-bbye'
+	Plug 'MunifTanjim/nui.nvim'
+	Plug 'nvim-neo-tree/neo-tree.nvim', {'branch':'v3.x'}
 call plug#end()
 autocmd vimenter * ++nested colorscheme gruvbox
 let g:airline#extensions#tabline#enabled = 1
 " Start NERDTree and leave the cursor in it.
-autocmd vimenter * NERDTree
+"autocmd vimenter * NERDTree
+autocmd vimenter * Neotree
 autocmd vimenter * Copilot disable
 nnoremap <leader>n :NERDTreeFocus<CR>
 :let mapleader = ","
