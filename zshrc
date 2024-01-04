@@ -43,13 +43,14 @@ cs() { cd $1 && ls }
 aur_download() { aur sync $1 && sudo pacman -S $1}
 ixupload(){ curl -F 'file=@-' 0x0.st }
 video2gif() { ffmpeg -i $1 -vf "fps=10,scale=320:-1:flags=lanczos" -c:v pam -f image2pipe - | convert -delay 5 - -loop 0 -layers optimize $2 }
-#alias damnit ='sudo !!'
+damnit() {sudo !!}
+randomxkcd() {curl https://xkcd.com/$(shuf -i 1-2875 -n 1)/info.0.json | jq ".img, .alt" }
 #alias startserver="cd ~/pengiun_mc/Da && ./start.sh"
 #SAVEHIST="9000"
 export PATH=$PATH:/home/julie/.spicetify:/home/julie/go/bin/
 export DEVKITARM=/opt/devkitpro/devkitARM
 export DEVKITPPC=/opt/devkitpro/devkitPPC
-export EDITOR=neovim
+export EDITOR=nvim
 eval $(thefuck --alias)
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
