@@ -37,7 +37,7 @@ alias zc="nvim .zshrc"
 alias ls="ls -la --color"
 alias grep="grep --color"
 alias rm="rm -i"
-alias cat="bat"
+#alias cat="bat"
 untar() { tar xvf $1 }
 cs() { cd $1 && ls }
 aur_download() { aur sync $1 && sudo pacman -S $1}
@@ -52,5 +52,3 @@ export DEVKITARM=/opt/devkitpro/devkitARM
 export DEVKITPPC=/opt/devkitpro/devkitPPC
 export EDITOR=nvim
 eval $(thefuck --alias)
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
