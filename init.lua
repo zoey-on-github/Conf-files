@@ -51,6 +51,7 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 let g:airline_powerline_fonts = 1
 :set relativenumber
 :set number
+:set expandtab
 syntax enable
 filetype plugin indent on
 let NERDTreeShowHidden=1
@@ -68,7 +69,7 @@ let g:rainbow_active = 1
 require("oil").setup()
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 require("coq_3p") {
-	  { src = "builtin/ada"     },
+  { src = "builtin/ada"     },
   { src = "builtin/c"       },
   { src = "builtin/clojure" },
   { src = "builtin/css"     },
