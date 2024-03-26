@@ -47,7 +47,7 @@ damnit() {sudo !!}
 randomxkcd() {curl https://xkcd.com/$(shuf -i 1-2875 -n 1)/info.0.json | jq ".img, .alt" }
 #alias startserver="cd ~/pengiun_mc/Da && ./start.sh"
 #SAVEHIST="9000"
-export PATH=$PATH:/home/julie/.spicetify:/home/julie/go/bin/
+export PATH=$PATH:/home/julie/.spicetify:/home/julie/go/bin/:/home/julie/.local/bin
 export DEVKITARM=/opt/devkitpro/devkitARM
 export DEVKITPPC=/opt/devkitpro/devkitPPC
 export EDITOR=nvim

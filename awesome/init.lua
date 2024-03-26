@@ -20,12 +20,12 @@ call plug#begin()
 	Plug 'rust-lang/rust.vim'
 	Plug 'andweeb/presence.nvim'
 	Plug 'junegunn/fzf'
+        Plug 'lukas-reineke/indent-blankline.nvim'
 	Plug 'voldikss/vim-floaterm'
 	Plug 'tpope/vim-fugitive'
 	Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 	Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 	Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
-	Plug 'github/copilot.vim'
 	Plug 'easymotion/vim-easymotion'
 	Plug 'luochen1990/rainbow'
 	Plug 'nvim-lua/plenary.nvim'
@@ -44,7 +44,6 @@ let g:airline#extensions#tabline#enabled = 1
 " Start NERDTree and leave the cursor in it.
 "autocmd vimenter * NERDTree
 autocmd vimenter * Neotree
-autocmd vimenter * Copilot disable
 autocmd vimenter * COQnow
 nnoremap <leader>n :NERDTreeFocus<CR>
 :let mapleader = ","
@@ -81,3 +80,4 @@ require("coq_3p") {
   { src = "builtin/xml"     },
 
 }
+require("ibl").setup()
