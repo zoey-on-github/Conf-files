@@ -43,7 +43,6 @@ autocmd vimenter * ++nested colorscheme gruvbox
 let g:airline#extensions#tabline#enabled = 1
 " Start NERDTree and leave the cursor in it.
 "autocmd vimenter * NERDTree
-autocmd vimenter * Neotree
 autocmd vimenter * COQnow
 nnoremap <leader>n :NERDTreeFocus<CR>
 :let mapleader = ","
