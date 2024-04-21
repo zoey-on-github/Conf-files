@@ -46,9 +46,6 @@ myConfig = def
         [((m .|. mod4Mask, k), windows $ onCurrentScreen f i)
         | (i, k) <- zip (workspaces' myConfig) [xK_1 .. xK_9]
         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]
-     --   , ((0, xF86XK_AudioLowerVolume   ), spawn "amixer set Master 2-")
-     --   , ((0, xF86XK_AudioRaiseVolume   ), spawn "amixer set Master 2+")
-     --   , ((0, xF86XK_AudioMute          ), spawn "amixer set Master toggle")
         ]
 
 myLayout = tiled ||| Mirror tiled ||| Full ||| ThreeColMid 1 (3/100) (1/2)

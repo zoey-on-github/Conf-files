@@ -1,7 +1,4 @@
 vim.cmd([[
-"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
-"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
-"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
 if (empty($TMUX))
   if (has("nvim"))
     "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
@@ -38,32 +35,9 @@ call plug#begin()
 	Plug 'stevearc/oil.nvim'
 	Plug 'nvim-neo-tree/neo-tree.nvim', {'branch':'v3.x'}
 	Plug 'llathasa-veleth/vim-brainfuck'
+        Plug 'mrcjkb/rustaceanvim'
 call plug#end()
-autocmd vimenter * ++nested colorscheme gruvbox
-let g:airline#extensions#tabline#enabled = 1
-" Start NERDTree and leave the cursor in it.
-"autocmd vimenter * NERDTree
-autocmd vimenter * Neotree
-autocmd vimenter * COQnow
-nnoremap <leader>n :NERDTreeFocus<CR>
-:let mapleader = ","
-let g:airline_powerline_fonts = 1
-:set relativenumber
-:set number
-:set expandtab
-syntax enable
-filetype plugin indent on
-let NERDTreeShowHidden=1
-nnoremap <Leader>sv :source $MYVIMRC<CR>
-let g:rustfmt_autosave = 1
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-let g:rainbow_active = 1
+let g:airline#extensions#tabline#enabled = 1    
 ]])
 require("oil").setup()
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
@@ -81,3 +55,26 @@ require("coq_3p") {
 
 }
 require("ibl").setup()
+vim.opt.number = true
+vim.opt.expandtab = true
+vim.opt.relativenumber = true
+vim.cmd("syntax enable")
+vim.cmd("filetype  plugin indent on")
+vim.g.airline_powerline_fonts = 1
+vim.g.rainbow_active = 1
+vim.g.rustfmt_autosave = 1
+--[[
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+        pattern = {"* ++nested"},
+        command = "colorscheme gruvbox"
+})
+-]]
+vim.cmd("autocmd vimenter * ++nested colorscheme gruvbox")
+vim.api.nvim_create_autocmd({ "VimEnter"}, {
+        pattern = {"*"},
+        command = "Neotree" 
+})
+vim.api.nvim_create_autocmd({ "VimEnter"}, {
+        pattern = {"*"},
+        command = "COQnow" 
+})
