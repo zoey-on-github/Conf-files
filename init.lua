@@ -110,6 +110,11 @@ require'lspconfig'.rust_analyzer.setup {
     }
   }
 }
+require'lspconfig'.pyright.setup{}
+require'lspconfig'.bashls.setup{}
+require'lspconfig'.hls.setup{
+        filetypes = { 'haskell', 'lhaskell', 'cabal'},
+}
   local cmp = require'cmp'
 
   cmp.setup({

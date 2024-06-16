@@ -54,3 +54,5 @@ export EDITOR=nvim
 eval $(thefuck --alias)
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+[ -f "/home/julie/.ghcup/env" ] && . "/home/julie/.ghcup/env" # ghcup-env

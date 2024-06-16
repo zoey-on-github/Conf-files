@@ -18,6 +18,7 @@ import XMonad.Layout.NoBorders
 import XMonad.Layout.Tabbed (tabbedAlways, shrinkText, Theme(..))
 import XMonad.Layout.ResizableTile (ResizableTall(..), MirrorResize(..))
 import XMonad.Util.Loggers
+import XMonad.Actions.UpdatePointer
 baseConfig = desktopConfig
 
 main :: IO()
@@ -29,6 +30,8 @@ main = xmonad
 myConfig = def 
    { modMask = mod4Mask
    , layoutHook = myLayout
+   }
+   { logHook = updatePointer (0.5,0.5) (0,0)
    }
    { terminal = "kitty"
    }
