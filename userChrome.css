@@ -1,0 +1,54 @@
+
+  @media (-moz-gtk-csd-available), (-moz-mac-big-sur-theme: 0), (-moz-mac-big-sur-theme: 1) {
+      #TabsToolbar:not([customizing="true"]) {
+            visibility: collapse !important;
+        }
+
+      #toolbar-menubar {
+            padding-top: 0px !important;
+        }
+
+      #TabsToolbar:not([customizing="true"]) {
+            visibility: collapse !important;
+        }
+
+      #toolbar-menubar {
+            padding-top: 0px !important;
+        }
+
+      #nav-bar {
+            padding-left: 80px;
+        }
+
+      #TabsToolbar .titlebar-buttonbox-container {
+            visibility: visible !important;
+            position: absolute;
+            top: 12px;
+            left: 0px;
+        }
+
+      .titlebar-buttonbox-container {
+            display: block;
+        }
+
+      .titlebar-button > .toolbarbutton-icon {
+            height: 13x !important;
+            min-height: 13px !important;
+            width: 13px !important;
+            min-width: 13px !important;
+        }
+
+      .titlebar-button {
+            padding-left: 6px !important;
+            padding-right: 6px !important;
+            padding-top: 6px !important;
+        }
+
+      .titlebar-placeholder[type="pre-tabs"] {
+            width: 120px !important;
+        }
+
+      .titlebar-buttonbox-container {
+            -moz-box-ordinal-group: 0;
+        }
+  
