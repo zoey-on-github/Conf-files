@@ -33,11 +33,12 @@ alias neovim="nvim"
 alias awconf="cd ~/.config/awesome" 
 alias doom="~/.config/emacs/bin/doom"
 alias lgit="lazygit"
-alias zc="nvim .zshrc"
+alias zc="nvim ~/.zshrc"
 alias ls="ls -la --color"
 alias grep="grep --color"
 alias rm="rm -i"
 alias cat="bat"
+alias gpp="g++"
 untar() { tar xvf $1 }
 cs() { cd $1 && ls }
 aur_download() { aur sync $1 && sudo pacman -S $1}
@@ -55,4 +56,4 @@ eval $(thefuck --alias)
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-[ -f "/home/julie/.ghcup/env" ] && . "/home/julie/.ghcup/env" # ghcup-env
+[ -f "/home/julie/.ghcup/env" ] && . "/home/julie/.ghcup/env" # ghcup-env[ -s "/home/julie/.jabba/jabba.sh" ] && source "/home/julie/.jabba/jabba.sh"
