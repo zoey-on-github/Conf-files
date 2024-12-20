@@ -11,13 +11,12 @@ if (empty($TMUX))
     set termguicolors
   endif
 endif
-let g:airline#extensions#tabline#enabled = 1    
+"let g:airline#extensions#tabline#enabled = 1    
 ]])
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 local vim = vim
 local Plug = vim.fn['plug#']
 vim.call('plug#begin')
-	Plug('vim-airline/vim-airline')
 	Plug('rust-lang/rust.vim')
 	Plug('andweeb/presence.nvim')
 	Plug('junegunn/fzf')
@@ -27,6 +26,8 @@ vim.call('plug#begin')
 	Plug('easymotion/vim-easymotion')
 	Plug('luochen1990/rainbow')
 	Plug('nvim-lua/plenary.nvim')
+        Plug('nvim-lualine/lualine.nvim')
+        Plug('nvim-tree/nvim-web-devicons')
 	Plug('nvim-telescope/telescope.nvim', { ['tag'] = '0.1.3' })
 	Plug('aymericbeaumet/vim-symlink')
 	Plug('moll/vim-bbye')
@@ -40,14 +41,16 @@ vim.call('plug#begin')
         Plug('hrsh7th/cmp-path')
         Plug('hrsh7th/cmp-cmdline')
         Plug('hrsh7th/nvim-cmp')
-        Plug('mrcjkb/rustaceanvim')
         Plug('hrsh7th/cmp-vsnip')
         Plug('hrsh7th/vim-vsnip')
         Plug('williamboman/mason.nvim')
         Plug('williamboman/mason-lspconfig.nvim')
+        Plug('vim/killersheep')
 vim.call ('plug#end')
 require("oil").setup()
 require("ibl").setup()
+require("mason").setup()
+require("mason-lspconfig").setup()
 local lsp = require "lspconfig"
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 vim.opt.number = true
@@ -56,6 +59,7 @@ vim.opt.relativenumber = true
 vim.cmd("syntax enable")
 vim.cmd("filetype  plugin indent on")
 vim.g.airline_powerline_fonts = 1
+vim.g.airline_theme='gruvbox'
 vim.g.rainbow_active = 1
 vim.g.rustfmt_autosave = 1
 --[[
@@ -69,52 +73,6 @@ vim.api.nvim_create_autocmd({ "VimEnter"}, {
         pattern = {"*"},
         command = "Neotree"
 })
-require'lspconfig'.lua_ls.setup {
-  on_init = function(client)
-    local path = client.workspace_folders[1].name
-    if vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc') then
-      return
-    end
-    client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
-      runtime = {
-        -- Tell the language server which version of Lua you're using
-        -- (most likely LuaJIT in the case of Neovim)
-        version = 'LuaJIT'
-      },
-      -- Make the server aware of Neovim runtime files
-      workspace = {
-        checkThirdParty = false,
-        library = {
-          vim.env.VIMRUNTIME
-          -- Depending on the usage, you might want to add additional paths here.
-          -- "${3rd}/luv/library"
-          -- "${3rd}/busted/library",
-        }
-        -- or pull in all of 'runtimepath'. NOTE: this is a lot slower
-        -- library = vim.api.nvim_get_runtime_file("", true)
-      }
-    })
-  end,
-  capabilities = capabilities,
-  settings = {
-    Lua = {}
-  }
-}
-require'lspconfig'.rust_analyzer.setup {
-  capabilities = capabilities,
-  settings = {
-    ['rust-analyzer'] = {
-      diagnostics = {
-        enable = false;
-      }
-    }
-  }
-}
-require'lspconfig'.pyright.setup{}
-require'lspconfig'.bashls.setup{}
-require'lspconfig'.hls.setup{
-        filetypes = { 'haskell', 'lhaskell', 'cabal'},
-}
   local cmp = require'cmp'
 
   cmp.setup({
@@ -180,6 +138,94 @@ require'lspconfig'.hls.setup{
     matching = { disallow_symbol_nonprefix_matching = false }
   })
 
-require("mason").setup()
-require("mason-lspconfig").setup()
-
+require('lspconfig')['lua_ls'].setup {
+  on_init = function(client)
+    local path = client.workspace_folders[1].name
+    if vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc') then
+      return
+    end
+    client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+      runtime = {
+        -- Tell the language server which version of Lua you're using
+        -- (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT'
+      },
+      -- Make the server aware of Neovim runtime files
+      workspace = {
+        checkThirdParty = false,
+        library = {
+          vim.env.VIMRUNTIME
+          -- Depending on the usage, you might want to add additional paths here.
+          -- "${3rd}/luv/library"
+          -- "${3rd}/busted/library",
+        }
+        -- or pull in all of 'runtimepath'. NOTE: this is a lot slower
+        -- library = vim.api.nvim_get_runtime_file("", true)
+      }
+    })
+  end,
+  capabilities = capabilities,
+  settings = {
+    Lua = {}
+  }
+}
+require('lspconfig')['rust_analyzer'].setup {
+  capabilities = capabilities,
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = false;
+      }
+    }
+  }
+}
+require('lspconfig')['pyright'].setup{}
+require('lspconfig')['bashls'].setup{}
+require('lspconfig')['clangd'].setup{}
+require('lspconfig')['hls'].setup{
+        filetypes = { 'haskell', 'lhaskell', 'cabal'},
+}
+require('lspconfig')['zls'].setup{}
+require('lspconfig')['nim_langserver'].setup{}
+require('lspconfig')['vtsls'].setup{}
+require('lualine').setup {
+  options = {
+    icons_enabled = true,
+    theme = 'auto',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {
+      statusline = {},
+      winbar = {},
+    },
+    ignore_focus = {},
+    always_divide_middle = true,
+    always_show_tabline = true,
+    globalstatus = false,
+    refresh = {
+      statusline = 100,
+      tabline = 100,
+      winbar = 100,
+    }
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_c = {'filename'},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {},
+  winbar = {},
+  inactive_winbar = {},
+  extensions = {}
+}
