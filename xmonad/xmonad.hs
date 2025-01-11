@@ -43,6 +43,7 @@ myConfig = def
 --   , ("M-S-f", sendMessage (Toggle "Full"))
    , ("<XF86AudioRaiseVolume>", spawn "amixer set Master 5%+")
    , ("<XF86AudioLowerVolume>", spawn "amixer set Master 5%-")
+   , ("M1-<Space>", spawn "rofi -show drun")
    , ("<XF86AudioMute>", spawn "amixer set Master 0%")
     ]
     `additionalKeys`

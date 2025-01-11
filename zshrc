@@ -6,6 +6,7 @@ zstyle :compinstall filename '/home/julie/.zshrc'
 
 autoload -Uz compinit
 compinit
+eval "$(zoxide init zsh --cmd cd)"
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
