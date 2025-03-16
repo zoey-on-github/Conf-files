@@ -1,3 +1,4 @@
-$ /home/julie/.xmonad/build /home/julie/.xmonad/xmonad-x86_64-linux
+$ stack build --silent --stack-yaml /home/julie/.xmonad/stack.yaml
+$ stack ghc --stack-yaml /home/julie/.xmonad/stack.yaml -- --make xmonad.hs -i -ilib -fforce-recomp -main-is main -dynamic -v0 -outputdir /home/julie/.xmonad/build-x86_64-linux -o /home/julie/.xmonad/xmonad-x86_64-linux
 Stack has not been tested with GHC versions above 9.4, and using 9.6.4, this may fail
 Stack has not been tested with Cabal versions above 3.8, but version 3.10.1.0 was found, this may fail
