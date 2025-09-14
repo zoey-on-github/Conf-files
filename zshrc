@@ -54,7 +54,11 @@ export DEVKITARM=/opt/devkitpro/devkitARM
 export DEVKITPPC=/opt/devkitpro/devkitPPC
 export EDITOR=nvim
 eval $(thefuck --alias)
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
+if [[ $(uname) == "Darwin" ]]; then
+	source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh;
+	source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+else
+	source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
 [ -f "/home/julie/.ghcup/env" ] && . "/home/julie/.ghcup/env" # ghcup-env[ -s "/home/julie/.jabba/jabba.sh" ] && source "/home/julie/.jabba/jabba.sh"
