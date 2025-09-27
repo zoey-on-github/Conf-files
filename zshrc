@@ -34,7 +34,7 @@ alias neovim="nvim"
 alias awconf="cd ~/.config/awesome" 
 alias doom="~/.config/emacs/bin/doom"
 alias lgit="lazygit"
-alias zc="nvim ~/.zshrc"
+alias zc="nvim ~/.zshrc; source ~/.zshrc"
 alias ls="ls -la --color"
 alias grep="grep --color"
 alias rm="rm -i"
@@ -47,6 +47,7 @@ ixupload(){ curl -F 'file=@-' 0x0.st }
 video2gif() { ffmpeg -i $1 -vf "fps=10,scale=320:-1:flags=lanczos" -c:v pam -f image2pipe - | convert -delay 5 - -loop 0 -layers optimize $2 }
 damnit() {sudo !!}
 randomxkcd() {curl https://xkcd.com/$(shuf -i 1-2875 -n 1)/info.0.json | jq ".img, .alt" }
+cdir() { mkdir $1; cd $1}
 #alias startserver="cd ~/pengiun_mc/Da && ./start.sh"
 #SAVEHIST="9000"
 export PATH=$PATH:/home/julie/.spicetify:/home/julie/go/bin/:/home/julie/.local/bin:~/bin:/Users/julie/.local/bin
@@ -65,3 +66,5 @@ fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+
+export PATH=$PATH:/Users/julie/.spicetify
