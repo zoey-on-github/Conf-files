@@ -65,3 +65,6 @@
 ./xmonad/xmobar-git/.git/hooks/pre-receive.sample
 ./xmonad/xmobar-git/.git/hooks/sendemail-validate.sample
 ./xmonad/xmobar
+./xmonad/xmobar.hi 
+./xmonad/xmobar.o
+./xmonad/build-x86_64-linux/
