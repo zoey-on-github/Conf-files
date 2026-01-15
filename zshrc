@@ -9,12 +9,13 @@ compinit
 eval "$(zoxide init zsh --cmd cd)"
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
+#source ~/Conf-files/keybinds.sh 
 HISTFILE=~/.histfile
 HISTSIZE=9000
 SAVEHIST=9000
 setopt autocd
 unsetopt beep
-bindkey -v
+bindkey -e
 # End of lines configured by zsh-newuser-install
 autoload -U colors && colors
 autoload edit-command-line; zle -N edit-command-line
@@ -36,7 +37,7 @@ alias awconf="cd ~/.config/awesome"
 alias doom="~/.config/emacs/bin/doom"
 alias lgit="lazygit"
 alias zc="nvim ~/.zshrc; source ~/.zshrc"
-alias ls="ls -la --color"
+alias ls="eza -la"
 alias grep="grep --color"
 alias rm="rm -i"
 alias cat="bat"
@@ -61,7 +62,7 @@ if [[ $(uname) == "Darwin" ]]; then
 	source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh;
 	source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 else
-	source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 	source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 [ -f "/home/julie/.ghcup/env" ] && . "/home/julie/.ghcup/env" # ghcup-env[ -s "/home/julie/.jabba/jabba.sh" ] && source "/home/julie/.jabba/jabba.sh"
