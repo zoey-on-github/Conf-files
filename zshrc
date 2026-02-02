@@ -55,7 +55,7 @@ export PATH=$PATH:/home/julie/.spicetify:/home/julie/go/bin/:/home/julie/.local/
 export DEVKITARM=/opt/devkitpro/devkitARM
 export DEVKITPPC=/opt/devkitpro/devkitPPC
 export EDITOR=nvim
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 if [[ $(uname) == "Darwin" ]]; then
 	source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh;
 	source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
