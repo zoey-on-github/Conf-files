@@ -53,7 +53,8 @@ cdir() { mkdir $1; cd $1}
 nvim() {echo "bad girl" }
 #alias startserver="cd ~/pengiun_mc/Da && ./start.sh"
 #SAVEHIST="9000"
-export PATH=$PATH:/home/julie/.spicetify:/home/julie/go/bin/:/home/julie/.local/bin:~/bin:/Users/julie/.local/bin
+export PLAN9=/Users/julie/plan9port
+export PATH=$PATH:/home/julie/.spicetify:/home/julie/go/bin/:/home/julie/.local/bin:~/bin:/Users/julie/.local/bin:$PLAN9/bin
 export DEVKITARM=/opt/devkitpro/devkitARM
 export DEVKITPPC=/opt/devkitpro/devkitPPC
 export EDITOR=nvim
@@ -70,3 +71,4 @@ fi
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export PATH=$PATH:/Users/julie/.spicetify
+source <(fzf --zsh)
