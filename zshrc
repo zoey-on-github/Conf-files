@@ -14,9 +14,11 @@ HISTFILE=~/.histfile
 HISTSIZE=9000
 SAVEHIST=9000
 setopt autocd
+setopt HIST_VERIFY
 unsetopt beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
+setopt share_history
 autoload -U colors && colors
 autoload edit-command-line; zle -N edit-command-line
 autoload -Uz compinit && compinit
@@ -58,7 +60,7 @@ export PATH=$PATH:/home/julie/.spicetify:/home/julie/go/bin/:/home/julie/.local/
 export DEVKITARM=/opt/devkitpro/devkitARM
 export DEVKITPPC=/opt/devkitpro/devkitPPC
 export EDITOR=nvim
-# eval $(thefuck --alias)
+eval $(thefuck --alias)
 if [[ $(uname) == "Darwin" ]]; then
 	source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh;
 	source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -72,3 +74,5 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 export PATH=$PATH:/Users/julie/.spicetify
 source <(fzf --zsh)
+GPG_TTY=$(tty)
+export GPG_TTY
