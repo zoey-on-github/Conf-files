@@ -34,7 +34,6 @@ bindkey -M vicmd v edit-command-line
 alias icd="cd ~ && cd \$(find * -type d | fzf)"
 alias rainbowfetch="neofetch| lolcat" 
 #alias neovim="nvim"
-alias helix="hx"
 alias awconf="cd ~/.config/awesome" 
 alias doom="~/.config/emacs/bin/doom"
 alias lgit="lazygit"
@@ -53,6 +52,13 @@ damnit() {sudo !!}
 randomxkcd() {curl https://xkcd.com/$(shuf -i 1-2875 -n 1)/info.0.json | jq ".img, .alt" }
 cdir() { mkdir $1; cd $1}
 nvim() {echo "bad girl" }
+finder() {open -a finder $1}
+downloadvideo() {
+	yt-dlp --cookies-from-browser firefox -t mp4 $1
+}
+downloadmp3(){
+	yt-dlp -cookes-from-browser firefox -x --audio-format mp3 $1
+}
 #alias startserver="cd ~/pengiun_mc/Da && ./start.sh"
 #SAVEHIST="9000"
 export PLAN9=/Users/julie/plan9port
@@ -62,6 +68,7 @@ export DEVKITPPC=/opt/devkitpro/devkitPPC
 export EDITOR=nvim
 eval $(thefuck --alias)
 if [[ $(uname) == "Darwin" ]]; then
+	alias helix="hx"
 	source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh;
 	source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 else
