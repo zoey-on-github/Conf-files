@@ -31,7 +31,6 @@ PROMPT='${vcs_info_msg_0_}%# '
 PS1='[%n@%m %~]$ '
 bindkey -M vicmd v edit-command-line
 #aliases
-alias icd="cd ~ && cd \$(find * -type d | fzf)"
 alias rainbowfetch="neofetch| lolcat" 
 #alias neovim="nvim"
 alias awconf="cd ~/.config/awesome" 
@@ -47,7 +46,12 @@ untar() { tar xvf $1 }
 cs() { cd $1 && ls }
 aur_download() { aur sync $1 && sudo pacman -S $1}
 ixupload(){ curl -F 'file=@-' 0x0.st }
-video2gif() { ffmpeg -i $1 -vf "fps=10,scale=320:-1:flags=lanczos" -c:v pam -f image2pipe - | convert -delay 5 - -loop 0 -layers optimize $2 }
+video2gif(){
+	ffmpeg -i $1 \
+    -vf "fps=10,scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" \
+    -loop 0 $1.gif
+
+}
 damnit() {sudo !!}
 randomxkcd() {curl https://xkcd.com/$(shuf -i 1-2875 -n 1)/info.0.json | jq ".img, .alt" }
 cdir() { mkdir $1; cd $1}
