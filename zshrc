@@ -63,6 +63,9 @@ downloadvideo() {
 downloadmp3(){
 	yt-dlp -cookes-from-browser firefox -x --audio-format mp3 $1
 }
+openforge(){
+        open $(git remote get-url origin)
+}
 #alias startserver="cd ~/pengiun_mc/Da && ./start.sh"
 #SAVEHIST="9000"
 export PLAN9=/Users/julie/plan9port
