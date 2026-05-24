@@ -55,7 +55,7 @@ video2gif(){
 damnit() {sudo !!}
 randomxkcd() {curl https://xkcd.com/$(shuf -i 1-2875 -n 1)/info.0.json | jq ".img, .alt" }
 cdir() { mkdir $1; cd $1}
-nvim() {echo "bad girl" }
+# nvim() {echo "bad girl" }
 finder() {open -a finder $1}
 downloadvideo() {
 	yt-dlp --cookies-from-browser firefox -t mp4 $1
@@ -87,3 +87,4 @@ export PATH=$PATH:/Users/julie/.spicetify
 source <(fzf --zsh)
 GPG_TTY=$(tty)
 export GPG_TTY
+source ~/Conf-files/extract.sh
