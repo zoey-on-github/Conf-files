@@ -1,11 +1,14 @@
-
 # The following lines were added by compinstall
 
 zstyle ':completion:*' matcher-list 'r:|[._- '\'']=** r:|=**' '' 'm:{[:lower:]}={[:upper:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
 zstyle :compinstall filename '/home/julie/.zshrc'
-
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 autoload -Uz compinit
-compinit
+if [[ -n ~/.zcompdump(#qNmh-24) ]]; then
+  compinit -C
+else
+  compinit
+fi
 eval "$(zoxide init zsh --cmd cd)"
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
@@ -42,6 +45,7 @@ alias grep="grep --color"
 alias rm="rm -i"
 alias cat="bat"
 alias gpp="g++"
+alias python="python3"
 untar() { tar xvf $1 }
 cs() { cd $1 && ls }
 aur_download() { aur sync $1 && sudo pacman -S $1}
@@ -61,11 +65,12 @@ downloadvideo() {
 	yt-dlp --cookies-from-browser firefox -t mp4 $1
 }
 downloadmp3(){
-	yt-dlp -cookes-from-browser firefox -x --audio-format mp3 $1
+	yt-dlp --cookies-from-browser firefox -x --audio-format mp3 $1
 }
 openforge(){
         open $(git remote get-url origin)
 }
+gi() { curl -sLw \"\\\n\" https://www.toptal.com/developers/gitignore/api/$@ ;}
 #alias startserver="cd ~/pengiun_mc/Da && ./start.sh"
 #SAVEHIST="9000"
 export PLAN9=/Users/julie/plan9port
@@ -73,14 +78,16 @@ export PATH=$PATH:/home/julie/.spicetify:/home/julie/go/bin/:/home/julie/.local/
 export DEVKITARM=/opt/devkitpro/devkitARM
 export DEVKITPPC=/opt/devkitpro/devkitPPC
 export EDITOR=nvim
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 if [[ $(uname) == "Darwin" ]]; then
 	alias helix="hx"
 	source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh;
 	source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+        gop () {open $(git config --get remote.origin.url)}
 else
 	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 	source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+        gop () {xdg-open $(git config --get remote.origin.url)}
 fi
 [ -f "/home/julie/.ghcup/env" ] && . "/home/julie/.ghcup/env" # ghcup-env[ -s "/home/julie/.jabba/jabba.sh" ] && source "/home/julie/.jabba/jabba.sh"
 
@@ -91,3 +98,5 @@ source <(fzf --zsh)
 GPG_TTY=$(tty)
 export GPG_TTY
 source ~/Conf-files/extract.sh
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
