@@ -32,12 +32,12 @@ import Xmobar
 
 config :: Config
 config = defaultConfig {
-  font = "xft:Sans Mono-9"
+  font = "xft:tamzen"
   , additionalFonts = []
   , borderColor = "black"
   , border = TopB
   , bgColor = "black"
-  , fgColor = "grey"
+  , fgColor = "#ffc8be"
   , alpha = 255
   , position = Top
   , textOffset = -1
@@ -50,14 +50,12 @@ config = defaultConfig {
   , allDesktops = True
   , overrideRedirect = True
   , textOutputFormat = Ansi
-  , commands = [ Run $ Weather "EGPH" ["-t","<station>: <tempC>C",
+  , commands = [ Run $ Weather "LAX" ["-t","<station>: <tempC>C",
                                         "-L","18","-H","25",
                                         "--normal","green",
                                         "--high","red",
                                         "--low","lightblue"] 36000
-               , Run $ Network "eth0" ["-L","0","-H","32",
-                                        "--normal","green","--high","red"] 10
-               , Run $ Network "eth1" ["-L","0","-H","32",
+               , Run $ Network "enp42s0" ["-L","0","-H","32",
                                         "--normal","green","--high","red"] 10
                , Run $ Cpu ["-L","3","-H","50",
                              "--normal","green","--high","red"] 10
@@ -69,8 +67,8 @@ config = defaultConfig {
               ]
   , sepChar = "%"
   , alignSep = "}{"
-  , template = "%cpu% | %memory% * %swap% | %eth0% - %eth1% }\
-               \ %hw% { <fc=#ee9a00>%date%</fc>| %EGPH% | %uname%"
+  , template = "%cpu% <fc=#f1d3b2>|</fc> %memory% * %swap% <fc=#f1d3b2>|</fc> %enp42s0% }\
+               \ meow { <fc=#ee9a00>%date%</fc> <fc=#f1d3b2>|</fc> %LAX% <fc=#f1d3b2>|</fc> %uname%"
 }
 
 main :: IO ()
